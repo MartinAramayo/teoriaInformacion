@@ -1,16 +1,27 @@
 # teoriaInformacion
 
-Formulas, codigo y ejercicios resueltos de la materia teoría de la información.
+Formulas, código y ejercicios resueltos de la materia teoría de la información.
 
-## Script para de codificacion aritmetico.
+~~~
+Hoja de formulas:
+formulas/main.pdf
+modulo para codificación aritmético:
+arithmeticCoding/arithmetic.py
+Script de ejemplo para codificación aritmética:
+arithmeticCoding/ejemplo.py
+~~~
 
-Codificacion aritmetica como si fuese hecha a mano:
+## Script para codificación aritmética
+
+Codificación aritmética como si fuese hecha a mano:
 
 Lo que es:
-- Un codificador aritmetico que imprime los pasos como lo haria una persona siguiendo el algoritmo a mano.
+- Un codificador aritmético que imprime los pasos como lo haría una persona siguiendo el algoritmo a mano.
 
 Lo que no es:
-- Una implementacion que pretende ser eficiente o elegante de codificacion aritmetica.
+- Una implementación que pretende ser eficiente o elegante de codificación aritmética.
+
+A continuacion se tiene el resultado de ejecutar $\texttt{arithmeticCoding/ejemplo.py}$
 
 ~~~
 Codificando la secuencia
@@ -33,8 +44,8 @@ Codificando la secuencia
    0        0        0      27/64   135/256  │inf
    0        0        1        1        0     │input
 ---------------------------------
-Los ultimos bordes pasalos a la base que te interesa
-Donde queda la ultima x definimos el codigo [1, 0, 0, 0]
+Los últimos bordes pasalos a la base que te interesa
+Donde queda la ultima x definimos el código [1, 0, 0, 0]
 
 >> v0 = [cero, sp.Rational(1, 2), uno]
 >> code = [1, 0, 0, 0]
@@ -55,7 +66,7 @@ Donde queda la ultima x definimos el codigo [1, 0, 0, 0]
   1      0      0      0    │input
 ---------------------------------
 Decodifico el valor que saque de lo anterior
-Los ultimos bordes pasalos a la base que te interesa
+Los últimos bordes pasalos a la base que te interesa
 
 >> v0 = [cero, sp.Rational(3, 4), uno]
 >> valor = sp.Rational(9, 16)
@@ -96,3 +107,20 @@ Los ultimos bordes pasalos a la base que te interesa
 ---------------------------------
 Resuelvo y obtengo que [0, 1]
 ~~~
+
+## Como contribuir
+
+Por su proceso de producción el proyecto cuenta con múltiples errores de ortografía. Correcciones o citaciones a fuentes para verificar las resoluciones también son muy agradecidas.
+
+## Como compilar los documentos
+
+Pre-requisitos:
+- pandoc
+
+Los ejercicios resueltos escritos en markdown (archivos .md). Se compilan mediante
+
+~~~
+pandoc -s ejemplo.md -o 'ejemplo.pdf'
+~~~
+
+La hoja de formulas puede compilarse con pdflatex u otro compilador de archivos latex (.tex)
