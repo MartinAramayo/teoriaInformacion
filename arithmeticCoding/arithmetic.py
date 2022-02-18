@@ -6,10 +6,10 @@ from copy import copy
 def tag_list(size):
     if size >= 2:
         tag = size * ['│']
-        tag[0], tag[-2], tag[-1] = '│sup', '│inf', '│input'
+        tag[0], tag[-2], tag[-1] = '│sup', '│inf', '│code'
         return tag
 
-def print_algo_step(a_list, k):
+def str_algo_step(a_list, k):
     a = [f'{k}', f'{a_list[0]}', '┼']
     for index in range(len(a_list)-1):
         a += ['│', '╳', '│'] if k == index else 3 * ['│']
@@ -19,12 +19,23 @@ def print_algo_step(a_list, k):
     a.reverse()
     return a
         
-def print_solve(table):
+def steps2stringTable(table):
     ancho = max(len(max(col, key=len)) for col in table)
-    for fila in zip(*table):
+    num_filas = len(table[0])
+    num_columnas = len(table)
+    table_str = ''
+    for indx_table, fila in enumerate(zip(*table)):
         for indx in range(len(fila)-1):
-            print(str([*fila][indx]).center(ancho), end=' ')
-        print(str([*fila][indx+1]))
+            table_str += str([*fila][indx]).center(ancho)
+            table_str += ' '
+        table_str += str([*fila][indx+1])
+        table_str += '\n'
+        # introduce a double line to separete the answer
+        if indx_table == (num_filas-2):
+            # all columns, except tag (last one)
+            all_steps_width = (num_columnas - 1)*(ancho + 1)
+            table_str += '\n' + all_steps_width * '=' + '\n'
+    return table_str, ancho, num_filas, num_columnas
 
 # Calculation
 
@@ -52,14 +63,18 @@ def algo_step(v_base, v_now, digit):
 def arithmetic(v0, code):
     v_here, lista_sol = v0, []
     for digit in code:
-        lista_sol.append(print_algo_step(v_here, digit))
+        lista_sol.append(str_algo_step(v_here, digit))
         v_here = algo_step(v0, v_here, digit)
     
     tag = tag_list(len(lista_sol[-1]))
     lista_sol.append(tag)
-    print(33 * '-')
-    print_solve(lista_sol)
-    print(33 * '-')
+    aux = steps2stringTable(lista_sol)
+    table_str, ancho, num_filas, num_columnas = aux
+    
+    all_steps_width = (num_columnas-1)*(ancho + 1)
+    print(all_steps_width * '-')
+    print(table_str)
+    print(all_steps_width * '-')
 
 def algo_step_value(v_base, v_now, valor):
     for indx in range(len(v_base)-1):
@@ -78,16 +93,21 @@ def arithmetic_value(v0, valor, steps):
     v_here, lista_sol = v0, []
     for _ in range(steps):        
         v_k, digit = algo_step_value(v0, v_here, valor)
-        lista_sol.append(print_algo_step(v_here, digit))
+        lista_sol.append(str_algo_step(v_here, digit))
         if v_here == v_k:
             break
         v_here = v_k
     
     tag = tag_list(len(lista_sol[-1]))
     lista_sol.append(tag)
-    print(25 * '-' + 'valor, ', valor)
-    print_solve(lista_sol)
-    print(33 * '-')
+    aux = steps2stringTable(lista_sol)
+    table_str, ancho, num_filas, num_columnas = aux
+    
+    all_steps_width = (num_columnas-1)*(ancho + 1)
+    prefix = ('valor, ' + str(valor))
+    print(prefix + (all_steps_width - len(prefix)) * '-')
+    print(table_str)
+    print(all_steps_width * '-')
 
 cero = sp.Rational(0, 1) 
 uno = sp.Rational(1, 1)
