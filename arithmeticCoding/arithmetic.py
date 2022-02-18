@@ -1,21 +1,54 @@
 import sympy as sp
 from copy import copy
+import sys 
 
 # Aesthetic
 
-def tag_list(size):
+lines = {
+    'ascii-pipe':  '|',
+    'ascii-cross': 'X',
+    'ascii-end':   '-',
+    'pipe':        '│',
+    'cross':       '╳',
+    'end':         '┼',
+}
+
+def choose_tag_style(style='ascii'):
+    
+    try:
+        if style == 'lines':
+            style = ''
+        if style == 'ascii':
+            style = 'ascii-'
+        elif style != 'ascii':
+            raise RuntimeError
+    except RuntimeError:
+        print(
+            "RuntimeError: " +
+            "Invalid styles, use 'lines' or 'ascii'"
+        )
+        sys.exit()
+    return (lines[style + 'pipe'], 
+            lines[style + 'cross'], 
+            lines[style + 'end'])
+
+def tag_list(size, style):
+    pipe, cross, end = choose_tag_style(style)        
     if size >= 2:
-        tag = size * ['│']
-        tag[0], tag[-2], tag[-1] = '│sup', '│inf', '│code'
+        tag = size * [pipe]
+        aux = f'{pipe}sup', f'{pipe}inf', f'{pipe}code'
+        tag[0], tag[-2], tag[-1] = aux
         return tag
 
-def str_algo_step(a_list, k):
-    a = [f'{k}', f'{a_list[0]}', '┼']
+def str_algo_step(a_list, k, style):
+    pipe, cross, end = choose_tag_style(style)
+        
+    a = [f'{k}', f'{a_list[0]}', end]
     for index in range(len(a_list)-1):
-        a += ['│', '╳', '│'] if k == index else 3 * ['│']
+        a += [pipe, cross, pipe] if k == index else 3 * [pipe]
         not_finished = (a_list[-1] != a_list[index+1])
         a += [f'{a_list[index+1]}'] if not_finished else []
-    a += ['┼', f'{a_list[-1]}']
+    a += [end, f'{a_list[-1]}']
     a.reverse()
     return a
         
@@ -34,13 +67,13 @@ def steps2stringTable(table):
         if indx_table == (num_filas-2):
             # all columns, except tag (last one)
             all_steps_width = (num_columnas - 1)*(ancho + 1)
-            table_str += '\n' + all_steps_width * '=' + '\n'
+            table_str += all_steps_width * '=' + '\n'
     return table_str, ancho, num_filas, num_columnas
 
 # Calculation
 
 def new_value(start, end, frac):
-    """Get value at a fraction of an interval
+    """Get a value at a fraction of an interval
 
     Args:
         start (number): Start of interval
@@ -60,18 +93,22 @@ def algo_step(v_base, v_now, digit):
         v_next[indx] = new_value(start, end, v_base[indx])
     return v_next
 
-def arithmetic(v0, code):
+def arithmetic(v0, code, style='ascii'):
     v_here, lista_sol = v0, []
     for digit in code:
-        lista_sol.append(str_algo_step(v_here, digit))
+        lista_sol.append(str_algo_step(v_here, digit, style))
         v_here = algo_step(v0, v_here, digit)
     
-    tag = tag_list(len(lista_sol[-1]))
+    # add right side tag
+    tag = tag_list(len(lista_sol[-1]), style)
     lista_sol.append(tag)
+    
+    # get the width of the table
     aux = steps2stringTable(lista_sol)
     table_str, ancho, num_filas, num_columnas = aux
+    all_steps_width = (num_columnas - 1) * (ancho + 1)
     
-    all_steps_width = (num_columnas-1)*(ancho + 1)
+    # Print the output table
     print(all_steps_width * '-')
     print(table_str)
     print(all_steps_width * '-')
@@ -89,21 +126,25 @@ def algo_step_value(v_base, v_now, valor):
             break
     return algo_step(v_base, v_now, digit), digit
 
-def arithmetic_value(v0, valor, steps):
+def arithmetic_value(v0, valor, steps, style='ascii'):
     v_here, lista_sol = v0, []
     for _ in range(steps):        
         v_k, digit = algo_step_value(v0, v_here, valor)
-        lista_sol.append(str_algo_step(v_here, digit))
+        lista_sol.append(str_algo_step(v_here, digit, style))
         if v_here == v_k:
             break
         v_here = v_k
     
-    tag = tag_list(len(lista_sol[-1]))
+    # add right side tag
+    tag = tag_list(len(lista_sol[-1]), style)
     lista_sol.append(tag)
+    
+    # get the width of the table
     aux = steps2stringTable(lista_sol)
     table_str, ancho, num_filas, num_columnas = aux
+    all_steps_width = (num_columnas - 1) * (ancho + 1)
     
-    all_steps_width = (num_columnas-1)*(ancho + 1)
+    # Print the output table
     prefix = ('valor, ' + str(valor))
     print(prefix + (all_steps_width - len(prefix)) * '-')
     print(table_str)

@@ -58,3 +58,18 @@ valor = sp.Rational(1, 2)
 arithmetic_value(v0, valor, 5)
 
 print("Resuelvo y obtengo que [0, 1]") 
+
+print("================================================")
+
+aux = """
+>> v0 = [cero, sp.Rational(1, 2), uno]
+>> valor = sp.Rational(1, 2) 
+>> arithmetic_value(v0, valor, 5)
+"""
+print(aux)
+
+v0 = [cero, sp.Rational(1, 2), uno]
+valor = sp.Rational(1, 2) 
+arithmetic_value(v0, valor, 5)
+
+print("Resuelvo y obtengo que [1]") 
