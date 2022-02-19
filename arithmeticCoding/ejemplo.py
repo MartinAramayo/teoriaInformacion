@@ -12,8 +12,15 @@ v0 = [cero, sp.Rational(3, 4), uno]
 code = [0, 0, 1, 1, 0]
 arithmetic(v0, code)
 
-print("Los ultimos bordes pasalos a la base que te interesa")
-print("Donde queda la ultima x definimos el codigo [1, 0, 0, 0]")
+print("Los últimos bordes, se pueden pasar a la base de salida")
+print("En este caso, en base 2, el supremo e ínfimo:")
+print(""" 
+> 567/1023 to base 2
+      567 / 1023 ≈ 0000,100011011110001101111000110111100
+> 135/256 to base 2
+      135 / 256 = 0000,10000111
+""")
+print("Lo que implica que el código final es: [1, 0, 0, 0]")
 
 print("================================================")
 
@@ -29,7 +36,7 @@ code = [1, 0, 0, 0]
 arithmetic(v0, code)
 
 print("Decodifico el valor que saque de lo anterior")
-print("Los ultimos bordes pasalos a la base que te interesa")
+print("Los últimos bordes pasalos a la base que te interesa")
 
 print("================================================")
 
