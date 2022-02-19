@@ -1,4 +1,5 @@
 import sympy as sp
+from numpy import base_repr
 from copy import copy
 import sys 
 
@@ -32,7 +33,7 @@ def tag_list(size, style):
 def str_algo_step(interval, k, style):
     pipe, cross, end = choose_tag_style(style)
     crossed = [pipe, cross, pipe] # [|, X, |] 
-    uncrossed = 3 * [pipe]        # [|,|,|]
+    uncrossed = 3 * [pipe]        # [|, |, |]
     
     output = [f'{k}', f'{interval[0]}', end]
     for index in range(1, len(interval)):
@@ -82,7 +83,7 @@ def algo_step(base_interval, interval, digit):
         )
     return new_interval
 
-def arithmetic(base_interval, code, style='ascii'):
+def arithmetic(base_interval, code, style='ascii', base=2):
     interval, lista_sol = base_interval, []
     for digit in code:
         str_step = str_algo_step(interval, digit, style)
@@ -145,6 +146,3 @@ def arithmetic_value(base_interval,
     prefix = ('value=' + str(value))
     print(prefix + (all_steps_width - len(prefix)) * '-')
     print(f"{table_str}{all_steps_width * '-'}")
-
-cero = sp.Rational(0, 1) 
-uno = sp.Rational(1, 1)
