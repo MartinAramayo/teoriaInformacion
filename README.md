@@ -23,89 +23,63 @@ Lo que no es:
 
 A continuacion se tiene el resultado de ejecutar $\texttt{arithmeticCoding/ejemplo.py}$
 
-~~~
-Codificando la secuencia
+~~~ python
+Codificando la secuencia:
 
->> v0 = [cero, sp.Rational(3, 4), uno]
+>> interval0 = [0, sp.Rational(3, 4), 1]
 >> code = [0, 0, 1, 1, 0]
->> arithmetic(v0, code)
+>> arithmetic(interval0, code)
 
----------------------------------
-   1       3/4      9/16     9/16     9/16   │sup
-   ┼        ┼        ┼        ┼        ┼     │
-   │        │        │        │        │     │
-   │        │        ╳        ╳        │     │
-   │        │        │        │        │     │
-  3/4      9/16    27/64   135/256  567/1024 │
-   │        │        │        │        │     │
-   ╳        ╳        │        │        ╳     │
-   │        │        │        │        │     │
-   ┼        ┼        ┼        ┼        ┼     │
-   0        0        0      27/64   135/256  │inf
-   0        0        1        1        0     │input
----------------------------------
-Los últimos bordes pasalos a la base que te interesa
-Donde queda la ultima x definimos el código [1, 0, 0, 0]
+---------------------------------------------
+   1       3/4      9/16     9/16     9/16   |sup
+   -        -        -        -        -     |
+   |        |        |        |        |     |
+   |        |        X        X        |     |
+   |        |        |        |        |     |
+  3/4      9/16    27/64   135/256  567/1024 |
+   |        |        |        |        |     |
+   X        X        |        |        X     |
+   |        |        |        |        |     |
+   -        -        -        -        -     |
+   0        0        0      27/64   135/256  |inf
+=============================================
+   0        0        1        1        0     |code
+---------------------------------------------
 
->> v0 = [cero, sp.Rational(1, 2), uno]
->> code = [1, 0, 0, 0]
->> arithmetic(v0, code)
+Pasando los extremos del último intervalo a alguna base, 
+se puede determinar el código final a la salida.
 
----------------------------------
-  1      1     3/4    5/8   │sup
-  ┼      ┼      ┼      ┼    │
-  │      │      │      │    │
-  ╳      │      │      │    │
-  │      │      │      │    │
- 1/2    3/4    5/8    9/16  │
-  │      │      │      │    │
-  │      ╳      ╳      ╳    │
-  │      │      │      │    │
-  ┼      ┼      ┼      ┼    │
-  0     1/2    1/2    1/2   │inf
-  1      0      0      0    │input
----------------------------------
-Decodifico el valor que saque de lo anterior
-Los últimos bordes pasalos a la base que te interesa
+En este caso usamos base 2, el supremo e ínfimo:
 
->> v0 = [cero, sp.Rational(3, 4), uno]
->> valor = sp.Rational(9, 16)
->> arithmetic_value(v0, valor, 5)
+> 567/1023 to base 2
+      567 / 1023 ≈ 0000,100011011110001101111000110111100
+> 135/256 to base 2
+      135 / 256 = 0000,10000111
 
--------------------------valor,  9/16
-  1     3/4   │sup
-  ┼      ┼    │
-  │      │    │
-  │      ╳    │
-  │      │    │
- 3/4    9/16  │
-  │      │    │
-  ╳      │    │
-  │      │    │
-  ┼      ┼    │
-  0      0    │inf
-  0      1    │input
----------------------------------
+Lo que implica que el código final es: [1, 0, 0, 0]
 
->> v0 = [cero, sp.Rational(3, 4), uno]
->> valor = sp.Rational(1, 2)
->> arithmetic_value(v0, valor, 5)
+================================================
 
--------------------------valor,  1/2
-   1       3/4      9/16     9/16   135/256  │sup
-   ┼        ┼        ┼        ┼        ┼     │
-   │        │        │        │        │     │
-   │        │        ╳        │        │     │
-   │        │        │        │        │     │
-  3/4      9/16    27/64   135/256  513/1024 │
-   │        │        │        │        │     │
-   ╳        ╳        │        ╳        ╳     │
-   │        │        │        │        │     │
-   ┼        ┼        ┼        ┼        ┼     │
-   0        0        0      27/64    27/64   │inf
-   0        0        1        0        0     │input
----------------------------------
-Resuelvo y obtengo que [0, 1]
+>> interval0 = [0, sp.Rational(3, 4), 1]
+>> valor = sp.Rational(1, 2) 
+>> arithmetic_value(interval0, valor, 5)
+
+value=1/2------------------------------------
+   1       3/4      9/16     9/16   135/256  |sup
+   -        -        -        -        -     |
+   |        |        |        |        |     |
+   |        |        X        |        |     |
+   |        |        |        |        |     |
+  3/4      9/16    27/64   135/256  513/1024 |
+   |        |        |        |        |     |
+   X        X        |        X        X     |
+   |        |        |        |        |     |
+   -        -        -        -        -     |
+   0        0        0      27/64    27/64   |inf
+=============================================
+   0        0        1        0        0     |code
+---------------------------------------------
+Con 5 pasos se obtiene [0, 0, 1, 0, 0]
 ~~~
 
 ## Como contribuir
