@@ -21,7 +21,7 @@ Lo que es:
 Lo que no es:
 - Una implementación que pretende ser eficiente o elegante de codificación aritmética.
 
-A continuacion se tiene el resultado de ejecutar $\texttt{arithmeticCoding/ejemplo.py}$
+A continuacion se tiene el resultado de ejecutar ***arithmeticCoding/ejemplo.py***
 
 ~~~ python
 Codificando la secuencia:
