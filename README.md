@@ -1,14 +1,14 @@
 # teoriaInformacion
 
-Formulas, código y ejercicios resueltos de la materia teoría de la información.
+Fórmulas, código y ejercicios resueltos de teoría de la información.
 
 ~~~
 Hoja de formulas:
-formulas/main.pdf
+   formulas/main.pdf
 modulo para codificación aritmético:
-arithmeticCoding/arithmetic.py
+   arithmeticCoding/arithmetic.py
 Script de ejemplo para codificación aritmética:
-arithmeticCoding/ejemplo.py
+   arithmeticCoding/ejemplo.py
 ~~~
 
 ## Script para codificación aritmética
@@ -21,7 +21,7 @@ Lo que es:
 Lo que no es:
 - Una implementación que pretende ser eficiente o elegante de codificación aritmética.
 
-A continuacion se tiene el resultado de ejecutar ***arithmeticCoding/ejemplo.py***
+A continuación se tiene el resultado de ejecutar ***arithmeticCoding/ejemplo.py***
 
 ~~~ python
 Codificando la secuencia:
@@ -91,10 +91,10 @@ Por su proceso de producción el proyecto cuenta con múltiples errores de ortog
 Pre-requisitos:
 - pandoc
 
-Los ejercicios resueltos escritos en markdown (archivos .md). Se compilan mediante
+Los ejercicios resueltos escritos en Markdown (archivos .md). Se compilan mediante
 
 ~~~
 pandoc -s ejemplo.md -o 'ejemplo.pdf'
 ~~~
 
-La hoja de formulas puede compilarse con pdflatex u otro compilador de archivos latex (.tex)
+La hoja de fórmulas puede compilarse con pdflatex u otro compilador de archivos LaTeX (.tex)
