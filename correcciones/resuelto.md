@@ -21,7 +21,7 @@ Si es posible, encuentre ejemplos de variables $X$ e $Y$ tales que
 Encontrar un ejemplo significa dar los conjuntos $\mathcal{A}_{x} \mathrm{y} \mathcal{A}_{Y}$ donde $X$ e $Y$ toman valores, $\mathrm{y}$ también dar explícitamente las distribuciones de probabilidad $p(x), p(y)$ y $p(x, y), \forall x \in \mathcal{A}_{X} \mathrm{y} \forall y \in \mathcal{A}_{Y}$. Si no existe ningún par de variables aleatorias $X$ e $Y$ que cumpla con lo requerido por el enunciado, demuestre tal no existencia.
 
 
-**Resolucion:** 
+**Resolución:** 
 
 ### Preámbulo
 
@@ -91,7 +91,7 @@ $$
 0 \leq I(X;Y) \leq \min (H(X), H(Y))
 $$
 
-$I$ es máxima lo cual sugiere que se ahorra el máximo \# de preguntas posible. Esto descarta que ambas variables sean independientes. Si uno propone $X$ e $Y$ relacionados por $f$:
+$I$ es máxima, lo cual sugiere que se ahorra el máximo \# de preguntas posible. Esto descarta que ambas variables sean independientes. Si uno propone $X$ e $Y$ relacionados por $f$:
 
 En forma matricial: 
 $$
@@ -170,7 +170,7 @@ $$
 
 Lo cual no contradice que $I(X;Y) = 1 \texttt{ bit}$.
 
-Se ahorra un numero de preguntas. Por lo que las variables no son totalmente independientes, suponiendo una dependencia tipo:
+Se ahorra un número de preguntas. Por lo que las variables no son totalmente independientes, suponiendo una dependencia tipo:
 $$
 y = 
 \left\lbrace
@@ -382,7 +382,7 @@ $$
 11001000111011010111001011100111111
 $$
 
-Propongo hacer huffman:
+Propongo hacer Huffman:
 
 ~~~
 1/2 1/4 1/4
@@ -440,8 +440,7 @@ elegida. De esa urna, se extrae una pelota. La variable $Y$ es el color de la pe
 
 ![Urnas y pelotas](bolitas.pdf) 
 
-**Resolucion:** 
-
+**Resolución:** 
 
 Propongo:
 $$
@@ -465,7 +464,7 @@ x=g         & 0        & 0      &  1
 \end{array}
 $$
 
-Uso otra notacion para los $x$ e $y$, que son $A_x=\lbrace x_1, x_2, x_3\rbrace, A_y=\lbrace  y_1, y_2, y_3\rbrace$
+Uso otra notación para los $x$ e $y$, que son $A_x=\lbrace x_1, x_2, x_3\rbrace, A_y=\lbrace  y_1, y_2, y_3\rbrace$
 
 para que la probabilidad condicional quede:
 $$
@@ -492,7 +491,7 @@ $$
 \end{aligned}
 $$
 
-Esta Informacion mutua es igual a $log | A_X|$, por esto:
+Esta Información mutua es igual a $log | A_X|$, por esto:
 $$C = log_2 3$$
 
 <!--
@@ -506,12 +505,12 @@ $$C = log_2 3$$
 
 ## Problema 4:
 **Enunciado:** 
-En un canal binario simétrico $X \rightarrow Y$ con probabilidad de error de bit $p(y=1 \mid x=0)=p(y=$ $0 \mid x=1)=q$ se transmite un código conformado por palabras clave de longitud $n$. Sea $Z$ una variable aleatoria binaria que representa si la cadena de $n$ digitos fue transmitida con o sin error. Se define un estimador $\hat{q}(z)$ que suponemos no sesgado, que estima la probabilidad de error de bit $q$ con que opera el canal a partir de una medición de $z$. Encuentre el minimo error cuadrático medio que puede tener el estimador $\hat{q}(z) . ¿$ Como se modifica la respuesta si consideramos un estimador no sesgado $\hat{q}\left(z_{1}, \ldots, z_{k}\right)$ que opera sobre $k$ muestras independientes de la variable binaria $Z ?$
+En un canal binario simétrico $X \rightarrow Y$ con probabilidad de error de bit $p(y=1 \mid x=0)=p(y=$ $0 \mid x=1)=q$ se transmite un código conformado por palabras clave de longitud $n$. Sea $Z$ una variable aleatoria binaria que representa si la cadena de $n$ dígitos fue transmitida con o sin error. Se define un estimador $\hat{q}(z)$ que suponemos no sesgado, que estima la probabilidad de error de bit $q$ con que opera el canal a partir de una medición de $z$. Encuentre el mínimo error cuadrático medio que puede tener el estimador $\hat{q}(z) . ¿$ Como se modifica la respuesta si consideramos un estimador no sesgado $\hat{q}\left(z_{1}, \ldots, z_{k}\right)$ que opera sobre $k$ muestras independientes de la variable binaria $Z ?$
 
-**Resolucion:** 
+**Resolución:** 
 
 
-EL error cuadratico minimo (por la cota de cramer Rao) es :
+EL error cuadrático mínimo (por la cota de Cramér-Rao) es:
 $$E^2(q) = \frac{1}{J(q)}$$
 $$
 error = \left\lbrace 
@@ -522,13 +521,13 @@ error = \left\lbrace
 \right.
 $$
 
-Para un codigo de longitud $n$ la variable $Z$, con una probabilidad de tener error $q$, tenemos una distribucion binomial:
+Para un código de longitud $n$ la variable $Z$, con una probabilidad de tener error $q$, tenemos una distribución binomial:
 $$
 z \in \lbrace 1, ..., n\rbrace, P(z \mid q)= 
 \frac{n !}{z !(n-z) !} q^{z}(1-q)^{n-z} 
 $$
 
-con una información de fisher:
+con una información de Fisher:
 $$J(q)=\frac{n}{q(1-q)}$$
 
 Con lo que:
@@ -538,13 +537,13 @@ $$E^2_{\min}(q) =
 {n}
 $$
 
-Como la informaicon de fisher es aditiva y tengo k muestras:
+Como la información de Fisher es aditiva y tengo $k$ muestras:
 $$J_k(q)=k J_1(q) = \frac{nk}{q(1-q)}$$
 
 Con lo que:
 $$E^2_{\min} (q) = \frac{q(1-q)}{nk}$$
 
-Las propiedades de la informacion de fisher me permiten tener una idea de cual es el error cuadratico medio de un "buen" estimador sin tener que realizar propuestas de estimadores y compararlas.
+Las propiedades de la información de Fisher me permiten tener una idea de cuál es el error cuadrático medio de un "buen" estimador sin tener que realizar propuestas de estimadores y compararlas.
 <!--
  ██████╗ ██╗  ██╗
  ██╔══██╗██║  ██║
