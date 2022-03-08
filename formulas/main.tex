@@ -67,7 +67,6 @@
 
 % \setlength{\itemsep{5em}}
 
-% \newcommand{\alfabeto}{$\mathcal{A}_X$}
 \newcommand{\alfabeto}{\mathcal{A}_X}
 
 \newcommand{\propiedad}{\textcolor{red}{\mathbf{>}}}
@@ -77,14 +76,12 @@
 \newcommand{\ejemplo}{\textcolor{red}{\color{red}{\boldsymbol{*}}}}
 \newcommand{\demo}{\textcolor{red}{\color{red}{\boldsymbol{\|}}}}
 
-
 \newcommand*\sepline{%
   \rule[0.7ex]{.5\textwidth}{.5pt}}
 
 %\preprint{APS/123-QED}
 
 \title{Teoría información}% Force line breaks with \\
-
 
 \maketitle
 
@@ -95,7 +92,7 @@ $,\ \tema$: Tema
 $,\ \propiedad$: Propiedad
 $,\ \definir$: Definir,
 
-$\ejemplo$: Ejemplo, $\demo$: Demostracion
+$\ejemplo$: Ejemplo, $\demo$: Demostración
 
 \sepline
 
@@ -184,7 +181,12 @@ $$
 
   \item[$\propiedad$] Variable change, prob. density functions:
   $$
-  g(\vec{y}) = f(\vec{x}) \left|{\det(\frac{d\vec{x}}{d\vec{y}})}\right|
+  g(\vec{y}) = f(\vec{x}) \left|
+    {
+    \det
+  \left(\frac{d\vec{x}}{d\vec{y}}\right)
+  }
+  \right|
   $$
 \end{itemize}
 
@@ -251,12 +253,12 @@ $$
 \textbf{$\tema$ Caso bivariado:}
 Con $\mathbf{X}=\left(X_{1}, X_{2}\right)$ variable aleatoria bivariada, $\mathbf{X} \in \mathcal{A}_{X_{1}}\times\mathcal{A}_{X_{2}}$ con prob. conjunta $p\left(x_{1}, x_{2}\right)$
 
-\textbf{$\definir$ Entropia conjunta: }
+\textbf{$\definir$ Entropía conjunta:}
 $$
 H\left(X_{1}, X_{2}\right)=-\sum_{x_{1}} \sum_{x_{2}} p\left(x_{1}, x_{2}\right) \log _{D}\left[p\left(x_{1}, x_{2}\right)\right]
 $$
 
-\textbf{$\definir$ Entropias marginales(una a una): }
+\textbf{$\definir$ Entropías marginales(una a una): }
 $$
 \begin{aligned}
 H\left(X_{1}\right)&=-\sum_{x_{1}} p\left(x_{1}\right) \log _{D}\left[p\left(x_{1}\right)\right] \\
@@ -267,7 +269,7 @@ p\left(x_{2}\right)=\sum_{x_{1}} p\left(x_{1}, x_{2}\right)
 \end{aligned}
 $$
 
-\textbf{$\definir$ Entropia condicional:}
+\textbf{$\definir$ Entropía condicional:}
 $$
 \begin{aligned}
 H\left(X_{1} \mid X_{2}\right)=-\sum_{x_{2}} p\left(x_{2}\right) \sum_{x_{1}} p\left(x_{1} \mid x_{2}\right) \log _{D}\left[p\left(x_{1} \mid x_{2}\right)\right] \\
@@ -335,7 +337,7 @@ $$
 $$
 
 \textbf{$\definir$ Estrictamente convexa:} 
-La función es convexa y unicamente en los extremos se cumple la igualdad.
+La función es convexa y únicamente en los extremos se cumple la igualdad.
 
 \textbf{$\propiedad$} Si $f''>0(f''>0)$ en un intervalo $I$ $\Rightarrow$ es estrictamente convexa (cóncava) en $I$.
 
@@ -364,7 +366,7 @@ $$
 D_{\mathrm{KL}}(p \| q)=\sum_{i} p\left(x_{i}\right) \log \left[\frac{p\left(x_{i}\right)}{q\left(x_{i}\right)}\right]
 $$
 
-\textbf{$\propiedad$ Justificando en termino de \# preguntas sobrantes:}
+\textbf{$\propiedad$ Justificando en término de \# preguntas sobrantes:}
 $$
 \left\langle
 \#
@@ -463,7 +465,7 @@ $$
 \begin{enumerate}
   \item[$\propiedad$] $I(X)$(y $H(X)$)no depende de $X$, solo de sus prob.
   \item[$\propiedad$] $ I(X ; X)=H(X) $ (viene de $H(X \mid X)=0$)
-  \item[$\propiedad$] $ I(X ; Y)=I(Y ; X) $ (simetria)
+  \item[$\propiedad$] $ I(X ; Y)=I(Y ; X) $ (simetría)
   \item[$\propiedad$]   
   $Y=f(X), f \ ^\text{funcion}_\text{inyectiva} \Rightarrow I(X ; Y)=H(X)=H(Y)$
   \item[$\propiedad$] Variables aleatorias $X, Y, Z=f(Y)$ 
@@ -515,7 +517,7 @@ $$
 \end{aligned}
 $$
 
-\textbf{$\definir$ iid:} independiente(s) e identicamente distribuida(s).
+\textbf{$\definir$ iid:} independiente(s) e idénticamente distribuida(s).
 
 \textbf{$\propiedad$ La ley de los grandes números:} 
 Dada una secuencia de variables aleatorias $X_{1}, X_{2}, \ldots, X_{n}$ \textbf{iid}s con prob. $p(x),$ donde $x \in\left\{a_{1}, \ldots, a_{k}\right\},$ la ley establece que:
@@ -558,7 +560,7 @@ $H(X)$ no depende de la cadena, $X$ es el nombre de la variable aleatoria. La co
 \textbf{$\nota$ PUEDE NO SER 2} 
 puede ser otra base, $e,3$ o lo que convenga para el problema (unidades de info.).
 
-\textbf{$\tema$ Propiedades conjunto tipico$\mathcal{A}_{\varepsilon}^{(n)}$:}
+\textbf{$\tema$ Propiedades conjunto típico$\mathcal{A}_{\varepsilon}^{(n)}$:}
 
 \begin{enumerate}
   \item[$\propiedad$] Si una cadena $\in\mathcal{A}_{\varepsilon}^{(n)}$, el logaritmo de su prob. está muy cercana a $[-n H(X)]$. Esto es, 
@@ -573,7 +575,7 @@ puede ser otra base, $e,3$ o lo que convenga para el problema (unidades de info.
   $$
   \forall \delta>0, \exists n_{0} \in \mathbb{N} / \forall n>n_{0}, \operatorname{Prob}\left[\left(X_{1}, \ldots, X_{n}\right) \in \mathcal{A}_{e}^{(n)}\right]>1-\delta
   $$
-  \item[$\propiedad$] Cota a cardinalidad del conjunto tipico:
+  \item[$\propiedad$] Cota a cardinalidad del conjunto típico:
   $$
   \underbrace{(1-\varepsilon) 2^{n[H(X)-\varepsilon]}}_{\forall \varepsilon>0, \exists n_{0} \in \mathbb{N} : \forall n>n_{0}(n \text{ big enough})}
   \leq
@@ -584,7 +586,7 @@ puede ser otra base, $e,3$ o lo que convenga para el problema (unidades de info.
 \end{enumerate}
 
 \textbf{$\propiedad$ Teorema de codificación de una fuente:}
-Una secuencia de $n$ variables aleatorias \textbf{iid}, cada una con entropia $H,$ puede representarse por $n(H+\varepsilon)$
+Una secuencia de $n$ variables aleatorias \textbf{iid}, cada una con entropía $H,$ puede representarse por $n(H+\varepsilon)$
 dígitos, con $\varepsilon$ tan chico como queramos, y con prob. de pérdida de info. también tan chica
 como queramos, si $n$ es lo suficientemente grande. Si se representan con menos de $n H$ dígitos $\Rightarrow$
 seguro que hay pérdida de info. (no infinitesimal).
@@ -598,7 +600,7 @@ _\text{de elementos de}$
 $\mathcal{A}_{Y},$ que también suelen llamarse ``cadenas $D$ -arias finitas".
 
 \textbf{$\definir$ Código fuente no singular:} 
-Un código fuente es no singular si es invertible(como las matrices). Es decir, si simbolos distintos del alfabeto son mapeados en secuencias $D$-arias distintas.
+Un código fuente es no singular si es invertible(como las matrices). Es decir, si símbolos distintos del alfabeto son mapeados en secuencias $D$-arias distintas.
 
 \textbf{$\ejemplo$ Ejemplo no singular y singular:}
 Los código $C_{0}$, $C_{1}$ mapean el alfabeto $\{a, b, c, d\}$ en tiras compuestas de \{0,1\} , tal que
@@ -650,13 +652,13 @@ C_{0}(a b a c d b)=\underbrace{1000}_{C_{0}(a)} \underbrace{0100}_{C_{0}(b)} \un
 $$
 
 \textbf{$\definir$ Código es unívocamente decodificable:}
-Codigo con extension no singular, es decir, si el código extendido es invertible.
+Código con extension no singular, es decir, si el código extendido es invertible.
 
 \textbf{$\definir$ Prefijo/ autopuntuado/ indice/ instantáneo:} 
 Un código fuente donde ninguna palabra clave es prefijo de otra palabra clave.
 
 \textbf{$\propiedad$ Prop.:} 
-indices $\subset$ univocamente decodificables $\subset$ no singulares $\subset$ codigos 
+indices $\subset$ unívocamente decodificables $\subset$ no singulares $\subset$ códigos 
 
 \textbf{$\definir$ Longitud media:} 
 La longitud media de un código fuente para la variable aleatoria $X$ con alfabeto $\mathcal{A}_X=\left\{x_{1}, \ldots, x_{k}\right\} \text { con probabilidades } p\left(x_{1}\right), \ldots p(x_{k})$ es:
@@ -670,7 +672,7 @@ $\mathcal{A}_{X}=\left\{x_{1}, \ldots, x_{M}\right\}$, $\mathcal{A}_{Y}$
 $= \{0,1, \ldots, D-1\} $ 
 y un conjunto $\left\{\ell_{1}, \ldots, \ell_{M}\right\} \subset \mathbb{Z}^+$, 
 
-$\exists$ codigo indice $C: \mathcal{A}_{X} \rightarrow$ $^\text{cadenas finitas}
+$\exists$ código indice $C: \mathcal{A}_{X} \rightarrow$ $^\text{cadenas finitas}
 _\text{de elementos de}$
 $\mathcal{A}_{Y},$
 de longitudes $\left\{\ell_{1}, \ldots, \ell_{M}\right\}$ $\Leftrightarrow$
@@ -693,7 +695,7 @@ Con longitudes
 $$
 \ell(x)=\left[-\log _{D} p(x)\right]_{+}
 $$
-donde, $[\cdot]_{+}$ significa redondeo entero \textit{hacia arriba}. Es decir, si las prob. no son $D$-arias $\Rightarrow$ $\exists x \in \mathcal{A}_{X}$ para el cual $-\log _{D}[p(x)] \notin \mathbb{Z}$. !!!! COMPLETAR con el algorritmo
+donde, $[\cdot]_{+}$ significa redondeo entero \textit{hacia arriba}. Es decir, si las prob. no son $D$-arias $\Rightarrow$ $\exists x \in \mathcal{A}_{X}$ para el cual $-\log _{D}[p(x)] \notin \mathbb{Z}$. !!!! COMPLETAR con el algoritmo
 
 \textbf{$\propiedad$} 
 Siempre se puede codificar una variable aleatoria (cualquier prob.) con un código indice tal que
@@ -701,12 +703,12 @@ $$
 H_{D}(X) \leq L<H_{D}(X)+1
 $$
 
-\textbf{$\propiedad$ Codigo huffman:} 
+\textbf{$\propiedad$ Código Huffman:} 
 \begin{enumerate}
-  \item[$\bullet$] Ordenar de mayor a menor(3,2,1) simbolos por su prob.
-  \item[$\bullet$] Formar un arbolito $\mathbb{A}$ con nodo donde anoto la prob. de la suma de los menos probables y con hijos los simbolos menos probables, este nodo va en un nivel superior.
+  \item[$\bullet$] Ordenar de mayor a menor(3,2,1) símbolos por su prob.
+  \item[$\bullet$] Formar un arbolito $\mathbb{A}$ con nodo donde anoto la prob. de la suma de los menos probables y con hijos los símbolos menos probables, este nodo va en un nivel superior.
   \item[$\bullet$] Repetir los dos pasos anteriores.
-  \item[$\bullet$] Completado $\mathbb{A}$ se usa para codificar. Para indicar el simbolo, se baja por $\mathbb{A}$, las ramas, ordenadas de izquierda a derecha (por decir un orden) indican un digito D-ario que codifica el simbolo. Cada eleccion de rama al bajar es un digito distinto, juntando los digitos al bajar por el $\mathbb{A}$ se tiene el codigo fuente del simbolo que esta al final de la rama.
+  \item[$\bullet$] Completado $\mathbb{A}$ se usa para codificar. Para indicar el símbolo, se baja por $\mathbb{A}$, las ramas, ordenadas de izquierda a derecha (por decir un orden) indican un dígito D-ario que codifica el símbolo. Cada elección de rama al bajar es un dígito distinto, juntando los dígitos al bajar por el $\mathbb{A}$ se tiene el código fuente del símbolo que esta al final de la rama.
 \end{enumerate}
 
 \section{Clase 5:}
@@ -717,20 +719,20 @@ $$
   \item[$\bullet$] Con $\zeta_D$ hasta orden $r$, tomar la parte decimal del número obtenido en la multiplicación anterior (descartando la parte entera) y multiplicar por $D$. La parte entera del resultado es el dígito $(r+1)$-ésimo de $\zeta_D$.
 \end{itemize}
 
-\textbf{$\propiedad$ Transformacion de la acumulada:}
+\textbf{$\propiedad$ Transformación de la acumulada:}
 Dadas $X, Y$ variables aleatorias definidas en intervalos finitos, con $Y$ uniforme. Se puede convertir $X$ en $Y$ mediante:
 $$y = F_X(x) = \int_{-\infty}^x f_X (\xi) d\xi, \quad f_X: \text{Dens. de prob. de } X$$
 
-\textbf{$\definir$ Codificacion aritmetica:} 
+\textbf{$\definir$ Codificación aritmética:} 
 
 \textbf{La entrada:} 
-Tomada como la reprensentacion en base $K$ de $\zeta \in [0,1] \subset \mathbb{R}$ la fuente genera una secuencia $z_{1} z_{2} z_{3} \ldots$, con $z_{i} \in\{0,1,2, \ldots, K-1\}$.
+Tomada como la representación en base $K$ de $\zeta \in [0,1] \subset \mathbb{R}$ la fuente genera una secuencia $z_{1} z_{2} z_{3} \ldots$, con $z_{i} \in\{0,1,2, \ldots, K-1\}$.
 $$
 \zeta=\sum_{n=1}^{+\infty} z_{n} K^{-n}, \ f_Z (z) \text{ No uniforme}
 $$ 
 
 \textbf{La salida:} 
-Tomada como la reprensentacion en base $D$ de un $F_z(\zeta )$, la fuente genera una secuencia $y_{1} y_{2} y_{3} \ldots$, con $y_{i} \in\{0,1,2, \ldots, D-1\}$.
+Tomada como la representación en base $D$ de un $F_z(\zeta )$, la fuente genera una secuencia $y_{1} y_{2} y_{3} \ldots$, con $y_{i} \in\{0,1,2, \ldots, D-1\}$.
 $$
 F_z(\zeta )=\sum_{n=1}^{+\infty} y_{n} D^{-n}, 
 \ f_Y (y) \text{ Uniforme}
@@ -758,7 +760,7 @@ C &=\operatorname{max}_{p(x)} I(X ; Y) \\
 \end{aligned}
 $$
 
-\textbf{$\definir$ Optimizacion de un canal:}
+\textbf{$\definir$ Optimización de un canal:}
 $$\boxed{\text{Fuente}} \stackrel{W}{\rightarrow}
 \boxed{\text{Compresor}} \stackrel{Z}{\rightarrow}
 \boxed{\text{Codificador}} \stackrel{X}{\rightarrow}
@@ -773,10 +775,10 @@ $H(X|Y)=0 \equiv I(X;Y)=H(X)$
 (Puede agregar ruido, pero no hay perdida de info.)
 
 \textbf{$\nota$} 
-$H(X|Y)=0 \Leftrightarrow$ $X$ es funcion de $Y$.
+$H(X|Y)=0 \Leftrightarrow$ $X$ es función de $Y$.
  
 \textbf{$\nota$} 
-$C =\operatorname{max}_{p(x)} I(X ; Y)= \operatorname{max}_{p(x)}H(X)=\log|A_X|$. Lo cual ocurre para una $p$ uniforme(Donde $H(X)$ es maxima).
+$C =\operatorname{max}_{p(x)} I(X ; Y)= \operatorname{max}_{p(x)}H(X)=\log|A_X|$. Lo cual ocurre para una $p$ uniforme(Donde $H(X)$ es máxima).
 
 
 \textbf{$\definir$ Canal es determinista:} 
@@ -786,10 +788,10 @@ $H(Y|X)=0 \equiv I(X;Y)=H(Y)$
 (No agrega ruido, aunque puede comprimir dos entradas en una salida (perdiendo info.))
 
 \textbf{$\nota$} 
-$H(Y|X)=0 \Leftrightarrow$ $Y$ es funcion de $X$.
+$H(Y|X)=0 \Leftrightarrow$ $Y$ es función de $X$.
  
 \textbf{$\nota$} 
-$C =\operatorname{max}_{p(x)} I(X ; Y)= \operatorname{max}_{p(x)}H(Y)=\log|A_Y|$. Lo cual ocurre para una $p$ uniforme(Donde $H(Y)$ es maxima).
+$C =\operatorname{max}_{p(x)} I(X ; Y)= \operatorname{max}_{p(x)}H(Y)=\log|A_Y|$. Lo cual ocurre para una $p$ uniforme(Donde $H(Y)$ es máxima).
 
 \textbf{$\definir$ Canal biyectivo:} 
 Es sin perdida y determinista.
@@ -797,7 +799,7 @@ Es sin perdida y determinista.
 \textbf{$\definir$ Canal inutil:} 
 $I(X ; Y)=0$
 
-\textbf{$\definir$ Canal simetrico:} 
+\textbf{$\definir$ Canal simétrico:} 
 La matriz $p(y \mid x)$ es tal que:
 $$
 \text{Todas sus } ^\textbf{FILAS}_\textbf{COLUMNAS} \text{son permutaciones unas de otras.}
@@ -809,7 +811,7 @@ $\nota$ En un canal simétrico $
   H(Y \mid X)=-\sum_{x} p(x) \sum_{y} p(y \mid x) \log [p(y \mid x)]
   $
 
-\textbf{$\definir$ Capacidad de un canal simetrico:} 
+\textbf{$\definir$ Capacidad de un canal simétrico:} 
 $$C=I(X;Y)\vline_{p(x)\text{uniforme}}$$
 
 \textbf{$\tema$ Propiedades de la capacidad:}
@@ -822,7 +824,7 @@ $$C=I(X;Y)\vline_{p(x)\text{uniforme}}$$
 \end{enumerate}
 
 
-\textbf{$\propiedad$ Canal binario simetrico:}
+\textbf{$\propiedad$ Canal binario simétrico:}
 $$
 \begin{array}{c|cc}
 p(y \mid x) & y=0 & y=1 \\
@@ -833,7 +835,7 @@ x=1 & f & 1-f
 C=1+f \log f+(1-f) \log (1-f)
 $$
 
-\textbf{$\propiedad$ Canal maquina de escribir ruidosa:}
+\textbf{$\propiedad$ Canal máquina de escribir ruidosa:}
 
 \begin{tabular}{c|ccccc}
   $p(y \mid x)$ & $y=0$ & $y=1$ & $y=2$ & $\ldots$ & $y=N-1$ \\
@@ -899,10 +901,10 @@ $$
 p\left(x^{n} ; y^{n}\right)=\prod_{i=1}^{n} p\left(x_{i}, y_{i}\right)
 $$
 
-\textbf{$\nota$ Condicion canal sin memoria:} 
+\textbf{$\nota$ Condición canal sin memoria:} 
 Trabajaremos siempre bajo la suposición de que el canal no tiene memoria
 
-\textbf{$\propiedad$ Propiedades de una cadena conjuntamente tipica:}
+\textbf{$\propiedad$ Propiedades de una cadena conjuntamente típica:}
 
 \textbf{$\propiedad$ Probabilidad de muestrear una cadena conjuntamente típica:}
 $$
@@ -967,18 +969,18 @@ $$
 \textbf{$\definir$ Tasa realizable:} 
 Existe una sucesión de códigos $\left(2^{n R}, n\right)$ cuya máxima prob. de error $\lambda_{\text {mix }}$ tiende a cero cuando $n \rightarrow \infty$.
 
-\textbf{$\propiedad$ Teorema de codificación de un cacnal:} 
+\textbf{$\propiedad$ Teorema de codificación de un canal:} 
 En un canal con capacidad $C,$ todas las tasas $R<C$ son realizables. Recíprocamente, toda secuencia de códigos $\left(2^{n R}, n\right)$ para la cual $\lambda_{\operatorname{max}} \rightarrow 0$ cuando $n \rightarrow \infty$ cumple que $R<C$.
 
 \section{Clase 8:}
 
-En esta seccion se asume:
+En esta sección se asume:
 \begin{itemize}
   \item[$\bullet$] El canal es sin memoria
-  \item[$\bullet$] La entrada es una secuencia $\infty$ de simbolos que $\in$ un alfabeto, con muestreo equiprobable e independiente.
+  \item[$\bullet$] La entrada es una secuencia $\infty$ de símbolos que $\in$ un alfabeto, con muestreo equiprobable e independiente.
 \end{itemize}
 
-\textbf{$\propiedad$ Aritmetica modular:}
+\textbf{$\propiedad$ Aritmética modular:}
 
 Cuando $D=2$:
 \begin{itemize}
@@ -1011,7 +1013,7 @@ $$
 
 \textbf{$\propiedad$ Probabilidad de acierto:}
 $$\textbf{Por digito: }1-f = p(y=0|x=0)=p(y=1|x=1)$$
-\textbf{Por codificacion:}
+\textbf{Por codificación:}
 $$
 \text { Prob(acierto) }=\sum_{\boldsymbol{x}^{i}} \operatorname{Prob}\left(\boldsymbol{x}^{i}\right) \sum_{y : g(\boldsymbol{y})=i}(1-f)^{n-d\left(\boldsymbol{x}^{i}, y\right)} f^{d\left(\boldsymbol{x}^{i}, \boldsymbol{y}\right)}
 $$
@@ -1025,7 +1027,7 @@ $d\left(\boldsymbol{x}^{i}, \boldsymbol{y}\right)$ sea mínimo.
 \textbf{$\definir$ Distancia Hamming:} 
 Entre dos vectores $z^{1}$ y $z^{2}$ 
 La Distancia de Hamming: 
-$d\left(z^{1}, z^{2}\right) = \#$ digitos donde $z^{1}_i$ y $z^{2}_i$ difieran
+$d\left(z^{1}, z^{2}\right) = \#$ dígitos donde $z^{1}_i$ y $z^{2}_i$ difieran
 $$
 d(z^{1}, z^{2})=\sum_{n=1}^{N}\left|z^{1}_{n}-z^{2}_{n}\right|
 $$
@@ -1052,24 +1054,24 @@ $$
   \end{subfigure}
 \end{figure}
 
-\textbf{$\nota$} Reciprocamente si conozco $e$ la desigualdad me indica como son las distancias Hamming.
+\textbf{$\nota$} Recíprocamente si conozco $e$ la desigualdad me indica como son las distancias Hamming.
 
 \textbf{$\propiedad$ Cota de Hamming(Cond. nec.):} 
 Si un código de $M$ palabras clave de longitud $n$ corrige errores hasta orden $e$ $\Rightarrow$
 $$
 M \leq \frac{2^{n}}{\sum_{i=0}^{e}{n \choose i}} \ 
-^{M: \#\text{palabras clave}, \quad e:\text{orden errores}}_{n: \#\text{digitos(long. de palabra clave(dim. espacio))}}
+^{M: \#\text{palabras clave}, \quad e:\text{orden errores}}_{n: \#\text{dígitos(long. de palabra clave(dim. espacio))}}
 $$
 
-\textbf{$\definir$ Codigo de Hamming:} Detecta y corrige hasta errores simples.
+\textbf{$\definir$ Código de Hamming:} Detecta y corrige hasta errores simples.
 $$
 \operatorname{Hamming}(a, b), 
-^{a\text{: \# digitos}}_{b\text{: \# bits de mensaje}}
+^{a\text{: \# dígitos}}_{b\text{: \# bits de mensaje}}
 \
 ^{a-b\text{: \# bits de paridad}}
 $$
 
-\textbf{$\definir$ Sindrome o corrector:} Con un mensaje transmitido $t$, un error $e$ y matriz de paridad $A$, el sindrome $s$:
+\textbf{$\definir$ Síndrome o corrector:} Con un mensaje transmitido $t$, un error $e$ y matriz de paridad $A$, el síndrome $s$:
 $$
 s=A y=A(t+e)=A e,\quad \operatorname{size}(A) = (a-b) \times a
 $$
@@ -1096,9 +1098,9 @@ $$
   t_{7}^{i}=x_{1}^{i} \oplus x_{3}^{i} \oplus x_{4}^{i}
 \end{aligned}, \ \
 \begin{aligned}
-  \vec{t^i}: & i\text{-esimo mensaje} \\
+  \vec{t^i}: & i\text{-ésimo mensaje} \\
   &\text{ transmitido},\\
-  &a \times 1 (1^os \ b \text{ digitos}\\
+  &a \times 1 (1^os \ b \text{ dígitos}\\
   & \text{son el mensaje})\\
   \oplus: & \text{suma xor} (\oplus_2)
 \end{aligned}
@@ -1110,7 +1112,7 @@ $$
 \text { Síndrome } & \text { Error } \\
 \hline \underbrace{0\ldots0}_b & \underbrace{0\ldots0}_a \\
 \hline A^T & I_a \\
-\hline ^\text{sindromes}_\text{restantes} & ^\text{respectivos}_\text{errores} \\
+\hline ^\text{síndromes}_\text{restantes} & ^\text{respectivos}_\text{errores} \\
 \end{array}
 \qquad \ejemplo \text{Ej.}: 
 \begin{array}{c|c}
@@ -1130,7 +1132,7 @@ $$
 
 \textbf{$\propiedad$ Corregir errores:} La matriz de chequeo de paridad $A$ corrige errores de orden hasta $e$ $\Leftrightarrow$ todo conjunto de $2e$ columnas de $A$ es linealmente independiente.
 
-\textbf{$\propiedad$ Digitos de chequeo de paridad(cond. suf.):} El número $\ell$ de dígitos de chequeo de paridad debe cumplir
+\textbf{$\propiedad$ Dígitos de chequeo de paridad(cond. suf.):} El número $\ell$ de dígitos de chequeo de paridad debe cumplir
 $$
 2^{\ell}>\sum_{i=0}^{2 e-1} {n-1 \choose i}
 $$
@@ -1180,7 +1182,7 @@ $$
 D_{\mathrm{KL}}\left(\rho_{1} \| \rho_{2}\right)=\int \rho_{1}(\boldsymbol{x}) \log \left[\frac{\rho_{1}(\boldsymbol{x})}{\rho_{2}(\boldsymbol{x})}\right] \mathrm{d} \boldsymbol{x}
 $$
 
-\textbf{$\definir$ Informacion mutua:} 
+\textbf{$\definir$ Información mutua:} 
 Dadas las variables aleatorias continuas multivariadas $\boldsymbol{X}$ e $\boldsymbol{Y}$ con densidades conjuntas $\rho(\boldsymbol{x}, \boldsymbol{y}),$
 la info. mutua $I(\boldsymbol{X} ; \boldsymbol{Y})$ vale
 $$
@@ -1232,7 +1234,7 @@ $$
 
 \section{Clase 10:}
 
-\textbf{$\tema$ Tecnica Maxentropy}
+\textbf{$\tema$ Técnica Maxentropy}
 
 \begin{itemize}
   \item[$\bullet$] Listar todas las restricciones que queremos tener en cuenta.
@@ -1273,7 +1275,7 @@ Cuando todas las restricciones fijan el valor medio($\mu$) de determinadas funci
 
 \textbf{$\nota$} En variables $\in \mathbb{R}_0$, la distr. exponencial es la que maximiza la $h(x)$ cuando se fija el $\mu$.
 
-\textbf{$\nota$} La distr. Gaussiana maximiza $h(x)$ cuando se fija la varianza(es irrelevante si se fija o no la media). Esta propiedad (junto al Teorema Central del Lim., cuando se puede suponer que su distr. proviene de la suma de diversos factores descorrelacionados), favorece a la distr. Gaussiana en procesos de los cuales sólo conocemos el tamaño tipico de las fluctuaciones.
+\textbf{$\nota$} La distr. Gaussiana maximiza $h(x)$ cuando se fija la varianza(es irrelevante si se fija o no la media). Esta propiedad (junto al Teorema Central del Lim., cuando se puede suponer que su distr. proviene de la suma de diversos factores descorrelacionados), favorece a la distr. Gaussiana en procesos de los cuales solo conocemos el tamaño típico de las fluctuaciones.
 
 \textbf{$\tema$ Canal gaussiano:} 
 Sean $Y_{i}, X_{i}, Z_{i}$ variables aleatorias. $Y_{i}$ la salida, $X_{i}$ la entrada, $Z_{i}$ un ruido gaussiano y muestreado indepen. del tiempo y de los $X_j$.
@@ -1287,7 +1289,7 @@ La magnitud $N$ de la varianza está fijada por el canal. Por cada valor $X_{i}$
 $$
 \rho\left(y_{i} \mid x_{i}\right)=\frac{e^{-\left(y-x_{i}\right)^{2} / 2 N}}{\sqrt{2 \pi N}}
 $$
-Por esto, la capacidad del canal puede crecer con solo aumentar la separacion entre simbolos de entrada. 
+Por esto, la capacidad del canal puede crecer con solo aumentar la separación entre símbolos de entrada. 
 
 \textbf{$\ejemplo$} Imaginemos que trabajamos con un alfabeto $\mathcal{A}_{X}=\{\ldots,-2 \Delta,-\Delta, 0, \Delta, 2 \Delta, \ldots\}$. 
 
@@ -1308,14 +1310,14 @@ Si elegimos $\operatorname{los} X_{i}$ de entrada con distr. uniforme, la info. 
 la solución con capacidad ($C\rightarrow \infty$), presupone que podemos usar 4 señales de entrada arbitrariamente grandes, no es posbile. Se trata de maximizar la capacidad restringiendo la potencia (es decir, la varianza) de las $X$ a la entrada. 
 
 \textbf{$\propiedad$ Estrategia 1:}
-en vez de $\infty$ entradas discretas, tan sólo un número finito, por
-ejemplo 2. Para separar máximamente las entradas y aún cumplir con la restricción sobre la varianza, proponemos que $X$ pueda valer sólo $\pm \sqrt{P}$, es decir.
+en vez de $\infty$ entradas discretas, tan solo un número finito, por
+ejemplo 2. Para separar máximamente las entradas y aún cumplir con la restricción sobre la varianza, proponemos que $X$ pueda valer solo $\pm \sqrt{P}$, es decir.
 $$
 \rho(x)=\frac{1}{2} \delta(x-\sqrt{P})+\frac{1}{2} \delta(x+\sqrt{P})
 $$
 Esta es una posible estrategia. De hecho, es la mejor estrategia que podemos tomar si nuestro objetivo
-es minimizar el error de decodificación. Sin embargo, se paga el costo de reducir drásticamente la entropía $H(X):$ del continuo de valores posibles que inicialmente teníamos para $X$, elegimos usar sólo
-dos. Agregar más entradas aumenta $H(X)$, pero también $H(X \mid Y)$
+es minimizar el error de decodificación. Sin embargo, se paga el costo de reducir drásticamente la entropía $H(X):$ del continuo de valores posibles que inicialmente teníamos para $X$, elegimos usar solo
+dos. Agregar más entradas aumenta $H(X)$, pero también $H(X \mid Y)$.
 
 \textbf{$\propiedad$ Estrategia 2:}
 Conviene maximizar $I(X ; Y)$, que es lo que hacemos a continuación. Es decir, buscamos una distr. de entrada $\rho(x)$-sin pérdida de generalidad, podemos suponer que tiene media nula-que
@@ -1323,7 +1325,7 @@ maximice la info. transmitida por el canal, sujeta a la restricción
 $$
 \left\langle X^{2}\right\rangle=\int_{-\infty}^{+\infty} \rho(x) x^{2} \mathrm{~d} x \leq P
 $$
-para una constante conocida $P$, que representa la potencia de entrada que estamos dispuestes a costear.
+para una constante conocida $P$, que representa la potencia de entrada que estamos dispuestos a costear.
 La $I$ entre la entrada y la salida vale
 $$
 \begin{aligned}
@@ -1339,7 +1341,7 @@ $h(X+Z \mid X)=h(Z \mid X)$, por ser $X$ fijo.
 \textbf{$\nota$}
 $h(Z \mid X)=h(Z)$ porque $X,Z$ son independientes.
 
-\textbf{$\nota$ Entropia diferencial de una gaussiana:} 
+\textbf{$\nota$ Entropía diferencial de una gaussiana:} 
 $h(Z)=\ln (2 \pi e N) / 2$
 
 Como $h(Z)$ está fijada por el canal, maximizar la $I$ sujeta a potencia de entrada $P$ a maximizar la $h(Y)$ sujeta a potencia $P$. $$
@@ -1358,7 +1360,7 @@ Por la forma de $\rho(y)$:
 $$
   \rho(x) =\frac{e^{-x^{2} / 2 P}}{\sqrt{2 \pi P}} ,\quad \rho(y \mid x) =\frac{e^{-(y-x)^{2} / 2 N}}{\sqrt{2 \pi N}}
 $$
-$\rho(x)$ muestrea valores cerca de 0 $\Rightarrow$ habra confusiones a la salida. Pero si la varianza de entrada está fija, al elegir una Gaussiana es más lo que ganamos en $h(X)$ que lo que perdemos en $h(X \mid Y)$.
+$\rho(x)$ muestrea valores cerca de 0 $\Rightarrow$ habrá confusiones a la salida. Pero si la varianza de entrada está fija, al elegir una Gaussiana es más lo que ganamos en $h(X)$ que lo que perdemos en $h(X \mid Y)$.
 
 Con estas densidades $I$ es máxima $\therefore C = I$:
 $$
@@ -1388,9 +1390,9 @@ B(\vartheta)= \langle \hat{\vartheta} \rangle -\vartheta=\int \mathrm{d}^{n} x p
 $$
 Un estimador es no sesgado si $B(\vartheta)=0, \forall \vartheta$
 
-\textbf{$\nota$} Como vemos la notacion $bias(\hat{\theta}) \neq B(\vartheta)$. Pero se refieren a lo mismo
+\textbf{$\nota$} Como vemos la notación $bias(\hat{\theta}) \neq B(\vartheta)$. Pero se refieren a lo mismo
 
-\textbf{$\definir$ Error cuadratico medio(MSE) estimador:} 
+\textbf{$\definir$ Error cuadrático medio(MSE) estimador:} 
 $$\mathbb{E} \left[(\hat{\theta}-\theta)^{2}\right]$$
 \textbf{$\propiedad$ Error MSE:} 
 $$
@@ -1404,7 +1406,7 @@ $$
 \end{aligned}
 $$
 
-\textbf{$\definir$ Informacion de Fisher:} 
+\textbf{$\definir$ Información de Fisher:} 
 Denotada $J(\vartheta)$ asociada a una distr. de prob. $p(x \mid \vartheta)$ es la varianza
 del puntaje. Es decir,
 $$
@@ -1426,12 +1428,12 @@ J(\vartheta) &=-\left\langle\frac{\partial^{2}}{\partial \vartheta^{2}} \ln [p(x
 \end{aligned}
 $$
 
-\textbf{$\definir$ Error cuadratico medio:}
+\textbf{$\definir$ Error cuadrático medio:}
 $$
 E^{2}(\vartheta) = E[ \hat{\vartheta} - \vartheta ] = \int_{-\infty}^\infty p\left(x_{1}, \ldots, x_{n} \mid \vartheta\right)\left[\hat{\vartheta}\left(x_{1}, \ldots, x_{n}\right)-\vartheta\right]^{2} {d}^{n} x 
 $$
 
-\textbf{$\definir$ Cota de Cramer-Rao:}
+\textbf{$\definir$ Cota de Crámer-Rao:}
 $$
 \begin{aligned}
   &\qquad \qquad \qquad E^{2}(\vartheta) J(\vartheta) \geq 1 \\
@@ -1442,7 +1444,7 @@ $$
 $$
 
 \textbf{$\definir$ Eficiente:} 
-Un estimador $\hat{\theta}$ es eficiente si su MSE es pequeño, (segun la Cota de Crámer Rao):
+Un estimador $\hat{\theta}$ es eficiente si su MSE es pequeño, (según la Cota de Crámer Rao):
 $$
 E^{2}(\vartheta) J(\vartheta) \geq 1,
 $$
@@ -1458,7 +1460,7 @@ $$
 % $V$.
 
 \textbf{$\nota$}
-$p(x \mid \vartheta)$ debe ser derivable (y $\boldsymbol{\therefore}$, continua) en $\vartheta$, salvo un numero finito de puntos, pero, puede no ser continua en $x$. $X$ puede ser una variable discreta, $p(x \mid \vartheta)$ puede solo estar definida en un número finito de $x's$, una suma de $\delta$.
+$p(x \mid \vartheta)$ debe ser derivable (y $\boldsymbol{\therefore}$, continua) en $\vartheta$, salvo un número finito de puntos, pero, puede no ser continua en $x$. $X$ puede ser una variable discreta, $p(x \mid \vartheta)$ puede solo estar definida en un número finito de $x's$, una suma de $\delta$.
 
 \textbf{$\propiedad$ Valor medio del puntaje:} 
 $\langle V \rangle = 0$
@@ -1484,7 +1486,7 @@ I^{\theta}(\theta) &=I^{\eta}(\eta)\left( \frac{\partial \eta}{\partial \theta} 
 \end{aligned}
 $$
 
-\textbf{$\ejemplo$ Binomial:} $\vartheta$ es la prob. de exito:
+\textbf{$\ejemplo$ Binomial:} $\vartheta$ es la prob. de éxito:
 $$
 \begin{aligned}
   P(k \mid \vartheta)
@@ -1543,7 +1545,7 @@ V &=\frac{\partial}{\partial \vartheta_{1}} \ln \left[p\left(X \mid \vartheta_{1
 \end{aligned}
 $$
 Nuevamente obtuvimos $V \propto X-\langle X\rangle$. Por esto el valor medio se anula.
-$$\text{Informacion fisher: }J\left(\vartheta_{1}\right)=\frac{1}{\vartheta_{1}^{2}}$$
+$$\text{Información Fisher: }J\left(\vartheta_{1}\right)=\frac{1}{\vartheta_{1}^{2}}$$
 
 \textbf{$\ejemplo$ Exponencial:} 
 $$
@@ -1568,7 +1570,7 @@ $$
 \end{aligned}
 $$
 
-\textbf{$\tema$ Repaso de tensores metricos:} 
+\textbf{$\tema$ Repaso de tensores métricos:} 
 Un tensor métrico $M$ debe ser simétrico y definido positivo
 (todos sus autovalores positivos), define un producto escalar
 $$
@@ -1588,7 +1590,7 @@ d\left(\boldsymbol{v}^{\alpha}, \boldsymbol{v}^{b}\right) &=\left|\boldsymbol{v}
 \end{aligned}
 $$
 
-\textbf{$\definir$ Informacion de Fisher, parametro multidimensional:}
+\textbf{$\definir$ Información de Fisher, parámetro multidimensional:}
 Si $\vartheta$ proviene de un espacio de parámetros $\Theta$ de dimensión $n$, la información de
 Fisher $J(\boldsymbol{\vartheta})$ es un tensor de rango 2 de dimensión $n \times n$ cuyas componentes valen
 $$
@@ -1597,7 +1599,7 @@ J(\boldsymbol{\vartheta})_{k \ell} &=\left\langle\frac{\partial \ln [p(x \mid \b
 &=-\left\langle\frac{\partial^{2} \ln [p(x \mid \boldsymbol{\vartheta})]}{\partial \boldsymbol{\vartheta}_{k} \partial \boldsymbol{\vartheta}_{k}}\right\rangle
 \end{aligned}
 $$
-donde los valores medios se calculan pesados con la distr. $p(x \mid \vartheta)$. Para el contrinuo:
+donde los valores medios se calculan pesados con la distr. $p(x \mid \vartheta)$. Para el continuo:
 $$
 \begin{aligned}
 J_{k \ell} &=\int p(x \mid \vartheta)\left[\frac{\partial \ln [p(x \mid \vartheta)]}{\partial v_{k}}\right]\left[\frac{\partial \ln [p(x \mid \vartheta)]}{\partial v_{\ell}}\right] \mathrm{d} x \\
@@ -1609,12 +1611,12 @@ y con variables discretas, las integrales se reemplazan por sumas.
 \textbf{$\propiedad$ Propiedades del tensor $J(\mathbf{\vartheta})$:}
 $$
 \begin{aligned}  
-   &\qquad\ {\tema} \text{Es simetrico, por definicion.} \\
+   &\qquad\ {\tema} \text{Es simétrico, por definición.} \\
    &\qquad\ {\tema} \text{Es definido no negativo (autovalores no negativos)}
 \end{aligned}
 $$
 
-\textbf{$\definir$ Cota de Cramer-Rao(Tensorial):} 
+\textbf{$\definir$ Cota de Crámer-Rao(Tensorial):} 
 se transforma en una ecuación matricial
 $$
 E^{2}(\boldsymbol{\vartheta}) J(\boldsymbol{\vartheta}) \geq \mathbb{I}
@@ -1636,7 +1638,7 @@ $y$ la desigualdad $E J \geq \mathbb{I}$ significa que todos los autovalores de 
 $$
 D_{\mathrm{KL}}[p(x \mid \boldsymbol{\vartheta}+\mathrm{d} \boldsymbol{\vartheta}) \| p(x \mid \boldsymbol{\theta})] \approx \frac{1}{2} \mathrm{~d} \boldsymbol{\vartheta}^{t} J(\boldsymbol{\vartheta}) \mathrm{d} \boldsymbol{\vartheta}
 $$
-\textbf{$\propiedad$ Transformacion:} 
+\textbf{$\propiedad$ Transformación:} 
 Si el parámetro $\vartheta$ es transformado en un nuevo parámetro $\varphi=F(\vartheta)$, $\Rightarrow$ la $J(\boldsymbol{v})$ transforma como
 $$
 J(\boldsymbol{v})=C^{t} J(\varphi) C
@@ -1646,14 +1648,13 @@ C_{k \ell}=\frac{\partial F_{k}}{\partial \vartheta_{\ell}} \
 _\text{de la transformación}
 $$
 
-
 \textbf{$\propiedad$ Teorema de procesamiento de datos:}
 Si transformamos la variable aleatoria $X$ en $Y=f(X) \Rightarrow$
 $$
 J_{X}(\boldsymbol{\vartheta}) \geq J_{Y}(\boldsymbol{\vartheta})
 $$
 
-\textbf{$\tema$ Tensor metrico:} $J_{ik}(\vartheta)$ Permite calcular dist. en el espacio de parámetros. Calculemos la dist.
+\textbf{$\tema$ Tensor métrico:} $J_{ik}(\vartheta)$ Permite calcular dist. en el espacio de parámetros. Calculemos la dist.
 entre los parámetros $\boldsymbol{\theta}^{a}=\left(\mu^{a}, \sigma^{a}\right)^{t}$ y $\boldsymbol{\theta}^{b}=\left(\mu^{b}, \sigma^{b}\right)^{t}$ 
 $$
 \begin{aligned}
@@ -1663,7 +1664,7 @@ $$
 \end{aligned}
 $$
 
-\textbf{$\ejemplo$ Tensor metrico:} 
+\textbf{$\ejemplo$ Tensor métrico:} 
 usando la métrica de Fisher de la distr.
 Gaussiana. Conectamos los puntos a través de un camino lineal
 $$
@@ -1684,8 +1685,7 @@ $$
 \sigma^{b}-\sigma^{a}
 \end{array}\right) \mathrm{d} t,
 $$
-donde $\dot{\vartheta}=\mathrm{d} \vartheta(t) / \mathrm{d} t .$ El cálculo es
-que es una cantidad siempre positiva. 
+donde $\dot{\vartheta}=\mathrm{d} \vartheta(t) / \mathrm{d} t$. La distancia es una cantidad siempre positiva. 
 $$
 \begin{aligned}
   \operatorname{Dist}\left(\boldsymbol{\vartheta}^{a}, \boldsymbol{\vartheta}^{b}\right) &=\frac{\sqrt{\left(\mu^{b}-\mu^{a}\right)^{2}+2\left(\sigma^{b}-\sigma^{2}\right)^{2}}}{\sigma^{b}-\sigma^{a}} \int_{0}^{\sigma^{b}-\sigma^{a}} \frac{\mathrm{d} z}{\sigma^{a}+z} \\
@@ -1717,8 +1717,6 @@ J_{\mu \sigma} & J_{\sigma \sigma}
 \end{array}\right) .
 \end{aligned}
 $$
-
-
 
 \end{document}
 %
